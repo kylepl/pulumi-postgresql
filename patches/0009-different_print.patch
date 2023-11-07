@@ -1,0 +1,14 @@
+diff --git a/postgresql/resource_postgresql_role.go b/postgresql/resource_postgresql_role.go
+index 983da3f..3b44415 100644
+--- a/postgresql/resource_postgresql_role.go
++++ b/postgresql/resource_postgresql_role.go
+@@ -921,7 +921,8 @@ func revokeRoles(txn *sql.Tx, d *schema.ResourceData) error {
+ 
+ 	rows, err := txn.Query(query, role)
+ 	if err != nil {
+-		return fmt.Errorf("could not get roles list for role %s: %w", role, err)
++		// TODO: Just causing an error to check it was here.
++		return fmt.Errorf("could not get roles list for role (SEE IT CHANGED) %s: %w: %s", role, err, query)
+ 	}
+ 	defer rows.Close()
+ 

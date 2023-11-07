@@ -1,0 +1,13 @@
+diff --git a/postgresql/resource_postgresql_role.go b/postgresql/resource_postgresql_role.go
+index 8710210..5760616 100644
+--- a/postgresql/resource_postgresql_role.go
++++ b/postgresql/resource_postgresql_role.go
+@@ -208,7 +208,7 @@ func resourcePostgreSQLRoleCreate(db *DBConnection, d *schema.ResourceData) erro
+ 		// {roleSuperuserAttr, "SUPERUSER", "NOSUPERUSER"},
+ 		{roleCreateDBAttr, "CREATEDB", "NOCREATEDB"},
+ 		{roleCreateRoleAttr, "CREATEROLE", "NOCREATEROLE"},
+-		{roleInheritAttr, "INHERIT", "NOINHERIT"},
++		// {roleInheritAttr, "INHERIT", "NOINHERIT"},
+ 		{roleLoginAttr, "LOGIN", "NOLOGIN"},
+ 		// roleEncryptedPassAttr is used only when rolePasswordAttr is set.
+ 		// {roleEncryptedPassAttr, "ENCRYPTED", "UNENCRYPTED"},

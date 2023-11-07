@@ -1,0 +1,14 @@
+diff --git a/postgresql/resource_postgresql_role.go b/postgresql/resource_postgresql_role.go
+index b7cb0fa..3d81772 100644
+--- a/postgresql/resource_postgresql_role.go
++++ b/postgresql/resource_postgresql_role.go
+@@ -195,7 +195,8 @@ func resourcePostgreSQLRoleCreate(db *DBConnection, d *schema.ResourceData) erro
+ 		hclKey string
+ 		sqlKey string
+ 	}{
+-		{roleConnLimitAttr, "CONNECTION LIMIT"},
++		// TODO: Re-enable. Testing if this a cockroach DB issue.
++		// {roleConnLimitAttr, "CONNECTION LIMIT"},
+ 	}
+ 
+ 	type boolOptType struct {

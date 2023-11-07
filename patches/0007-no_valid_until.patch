@@ -1,0 +1,15 @@
+diff --git a/postgresql/resource_postgresql_role.go b/postgresql/resource_postgresql_role.go
+index a85d17d..983da3f 100644
+--- a/postgresql/resource_postgresql_role.go
++++ b/postgresql/resource_postgresql_role.go
+@@ -189,7 +189,9 @@ func resourcePostgreSQLRoleCreate(db *DBConnection, d *schema.ResourceData) erro
+ 		sqlKey string
+ 	}{
+ 		{rolePasswordAttr, "PASSWORD"},
+-		{roleValidUntilAttr, "VALID UNTIL"},
++		// TODO: Disabled because of `pq: timestamp "294277-01-01T00:00:00Z" exceeds supported timestamp bounds`
++		// Not sure where the timestamp is coming from, guessing this?
++		// {roleValidUntilAttr, "VALID UNTIL"},
+ 	}
+ 	intOpts := []struct {
+ 		hclKey string

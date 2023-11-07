@@ -1,0 +1,13 @@
+diff --git a/postgresql/resource_postgresql_role.go b/postgresql/resource_postgresql_role.go
+index 3d81772..8710210 100644
+--- a/postgresql/resource_postgresql_role.go
++++ b/postgresql/resource_postgresql_role.go
+@@ -205,7 +205,7 @@ func resourcePostgreSQLRoleCreate(db *DBConnection, d *schema.ResourceData) erro
+ 		sqlKeyDisable string
+ 	}
+ 	boolOpts := []boolOptType{
+-		{roleSuperuserAttr, "SUPERUSER", "NOSUPERUSER"},
++		// {roleSuperuserAttr, "SUPERUSER", "NOSUPERUSER"},
+ 		{roleCreateDBAttr, "CREATEDB", "NOCREATEDB"},
+ 		{roleCreateRoleAttr, "CREATEROLE", "NOCREATEROLE"},
+ 		{roleInheritAttr, "INHERIT", "NOINHERIT"},
